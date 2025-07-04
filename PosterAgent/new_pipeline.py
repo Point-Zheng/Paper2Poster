@@ -212,9 +212,11 @@ if __name__ == '__main__':
         json.dump(tree_split_results, f, indent=4)
 
     # Step 5: Generate content
-    input_token_t, output_token_t, input_token_v, output_token_v = gen_bullet_point_content(args, agent_config_t, agent_config_v, tmp_dir=args.tmp_dir)
-    total_input_tokens_t += input_token
-    total_output_tokens_t += output_token
+    input_token_t, output_token_t, input_token_v, output_token_v = gen_bullet_point_content(
+        args, agent_config_t, agent_config_v, tmp_dir=args.tmp_dir
+    )
+    total_input_tokens_t += input_token_t
+    total_output_tokens_t += output_token_t
     total_input_tokens_v += input_token_v
     total_output_tokens_v += output_token_v
     print(f'Content generation token consumption T: {input_token_t} -> {output_token_t}')
